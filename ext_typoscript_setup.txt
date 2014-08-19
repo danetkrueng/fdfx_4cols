@@ -1,0 +1,183 @@
+plugin.tx_fdfx4cols_pi1{
+    _CSS_DEFAULT_STYLE (
+.tx-fdfx4cols-pi1 table td {
+	vertical-align: top;
+}
+/* Layout 1 */
+.c3l1-left{
+   border-right: 1px solid #FFEDA8;
+   padding-right: 5px;
+   width:25%;
+   white-space:normal;
+}
+.c3l1-middle{
+   border-right: 1px solid #FFEDA8;
+   padding-left: 5px;
+   padding-right: 5px;
+   width:25%;
+   white-space:normal;
+}
+.c3l1-right{
+   border-right: 1px solid #FFEDA8;
+   padding-left: 5px;
+   padding-right: 5px;
+   width:25%;
+   white-space:normal;
+}
+.c3l1-rightmost{
+   padding-left: 5px;
+   width:25%;
+   white-space:normal;
+}
+/* Layout 2 */
+.c3l2-left{
+   border-right: 1px solid #FFEDA8;
+   padding-right: 5px;
+   width:25%;
+   white-space:normal;
+}
+.c3l2-middle{
+   border-right: 1px solid #FFEDA8;
+   padding-left: 5px;
+   padding-right: 5px;
+   width:50%;
+   white-space:normal;
+}
+.c3l2-right{
+   border-right: 1px solid #FFEDA8;
+   padding-left: 5px;
+   padding-right: 5px;
+   width:12.5%;
+   white-space:normal;
+}
+.c3l2-rightmost{
+   padding-left: 5px;
+   width:12.5%;
+   white-space:normal;
+}
+/* Layout 3 */
+.c3l3-left{
+   border-right: 1px solid #FFEDA8;
+   padding-right: 5px;
+   width:40%;
+   white-space:normal;
+}
+.c3l3-middle{
+   border-right: 1px solid #FFEDA8;
+   padding-left: 5px;
+   padding-right: 5px;
+   width:40%;
+   white-space:normal;
+}
+.c3l3-right{
+   padding-left: 5px;
+   width:20%;
+   white-space:normal;
+   background-color:#FFEDA8;
+}
+.c3l3-rightmost{
+   padding-left: 5px;
+   width:20%;
+   white-space:normal;
+   background-color:#FFEDA8;
+}
+/*
+	Styles 3 Column DIV Section
+*/
+div.tx-fdfx4cols-pi1{
+    position:relative;
+    left:0px;
+	margin-bottom:10px;
+}
+/* Layout 1 */
+div.c3l1d-left{
+   position:absolute;
+   left:0px;
+   padding: 0px;
+   width:250px;
+   white-space:normal;
+   border:1px solid red;
+}
+div.c3l1d-middle{
+   position:absolute;
+   left:260px;
+   padding: 0px;
+   width:250px;
+   border:1px solid blue;
+   white-space:normal;
+}
+div.c3l1d-right{
+   position:absolute;
+   left:520px;
+   padding: 0px;
+   width:250px;
+   border:1px solid green;
+   white-space:normal;
+}
+/* Layout 2 */
+div.c3l2d-left{
+   position:absolute;
+   left:0px;
+   padding: 0px;
+   width:380px;
+   border:1px solid blue;
+   white-space:normal;
+}
+div.c3l2d-middle{
+   position:absolute;
+   left:390px;
+   padding: 0px;
+   width:380px;
+   white-space:normal;
+   border:1px solid blue;
+   background-color:#C0C0C0;
+}
+/*
+	Layout 3
+
+	embedded
+*/
+div.c3l3d-left{
+   position:absolute;
+   left:0px;
+   padding: 0px;
+   width:770px;
+   white-space:normal;
+   border:1px solid red;
+}
+div.c3l3d-middle{
+   float:right;
+   margin:5px;
+   padding: 0px;
+   width: 200px;
+   height: 100px;
+   overflow:auto;
+   white-space:normal;
+   border:1px solid blue;
+   background-color:#C0C0C0;
+}
+)
+    templateFile = {$plugin.tx_fdfx4cols_pi1.TEMPLATE_FILE}
+    divHeight = {$plugin.tx_fdfx2cols_pi1.DIV_HEIGHT}
+    parser < tt_content.text.20.parseFunc
+}
+tt_content.fdfx_4cols_pi1 = COA
+tt_content.fdfx_4cols_pi1 {
+	10 = < lib.stdheader
+	10.stdWrap.dataWrap=<p class="csc-fdfx_4cols_pi1-header csc-fdfx_4cols_pi1-header-{field:layout}">|</p>
+	15=TEXT
+	15{
+		field = subheader
+		required = 1
+
+		dataWrap = <p class="csc-fdfx_4cols_pi1-subheader csc-fdfx_4cols_pi1-subheader-{field:layout}">|</p>
+		htmlSpecialChars = 1
+
+		editIcons = tt_content:subheader,layout
+		editIcons.beforeLastTag = 1
+		editIcons.iconTitle.data = LLL:EXT:css_styled_content/pi1/locallang.php:eIcon.subheader
+
+		prefixComment = 2 | Subheader:
+	}
+	20 = < plugin.tx_fdfx4cols_pi1
+}

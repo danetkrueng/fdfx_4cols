@@ -1,0 +1,4 @@
+plugin.tx_fdfx4cols_pi1{
+    # cat=tx_fdfx4cols_pi1//; type=text; label= Template: Path and Name to Template (default: EXT:fdfx_4cols/tpl.4column.html)
+    TEMPLATE_FILE=EXT:fdfx_4cols/tpl.4column.html
+}
